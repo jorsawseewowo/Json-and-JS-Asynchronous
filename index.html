@@ -1,12 +1,16 @@
 <html>
     <body>
-        <h2>Convert JS object into a JSON string, and send to server</h2>
-        <p id="result"></p>
+        <h2>JS async / await</h2>
+        <h1 id="result"></h1>
         <script>
-            var myObj = { name: "Nathan", age: 15, grade: 9 };
-            var myJSON = JSON.stringify(myObj);
-            var newObj = JSON.parse(myJSON);
-            document.getElementById("result").innerHTML = newObj.name;
+            async function add(a,b) {
+                let response = await a + b;
+                display(response);
+            }
+            function display(some) {
+                document.getElementById("result").innerHTML = some;
+            }
+            add(5,20);
         </script>
     </body>
 </html>

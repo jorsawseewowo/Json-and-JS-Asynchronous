@@ -1,17 +1,16 @@
 <html>
     <body>
-        <h2>JS Callbacks</h2>
-        <p>Do a calculation and display the result</p>
-        <p id="result"></p>
+        <h2>JS async / await</h2>
+        <h1 id="result"></h1>
         <script>
-            function myDisplayer(value) {
-                document.getElementById("result").innerHTML = value;
+            async function product(a,b) {
+                let response = await a * b;
+                display(response);
             }
-            function myCalculator(num1, num2, myCallback) {
-                let sum = num1 + num2;
-                myCallback(sum);
+            function display(some) {
+                document.getElementById("result").innerHTML = some;
             }
-            myCalculator(5, 5, myDisplayer);
+            product(4,25);
         </script>
     </body>
 </html>
